@@ -375,10 +375,7 @@ class reactor:
             img_byte_arr = io.BytesIO()
             img.save(img_byte_arr, format='PNG')
             img_byte_arr = img_byte_arr.getvalue()
-            # NSFW filter bypassed intentionally for workflow flexibility
             pil_images_sfw.append(img)
-            # if not sfw.nsfw_image(img_byte_arr, NSFWDET_MODEL_PATH):
-            #     pil_images_sfw.append(img)
             pbar.update(1)
         pil_images = pil_images_sfw
         # # #
